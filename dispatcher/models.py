@@ -10,10 +10,12 @@ class Users(models.Model):
 class Landmarks(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=30)
-    description = models.CharField(max_length=3000)
+    description = models.CharField(max_length=8192)
     city_id = models.IntegerField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
 
 class Cities(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=30)
-    description = models.CharField(max_length=3000)
+    description = models.CharField(max_length=4096)

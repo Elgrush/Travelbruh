@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 from dispatcher.models import Users, Landmarks, Cities
+from django.http import JsonResponse
 
 # Create your views here.
 def add_user(request):
@@ -21,9 +22,10 @@ def check_users(request):
         s = s + i.login
     response = HttpResponse(s)
     return response
-def initialise(request):
-    Mark = Landmarks(name = "dummy", description = "dummy", city_id = 0)
-    Mark.save
-    Mark = Cities(name="dummy", description="dummy")
-    Mark.save
-    return HttpResponse
+
+def get_landmark(request):
+    data = dict(data=[dict()])
+    for i in Landmarks.objects.all():
+        data.update(data=[dict(name = i.name, description = i.description, latitude = i.latitude, longitude = i.longitude)])
+    response = JsonResponse(data = data)
+    return response
