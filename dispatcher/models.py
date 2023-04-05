@@ -4,6 +4,7 @@ from django.db import models
 
 class Users(models.Model):
     id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=30)
     login = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
 
@@ -20,3 +21,9 @@ class Cities(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=4096)
+
+class LMSuggestion(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    user_id = models.IntegerField()
+    city_id = models.IntegerField()
+    message =  models.CharField(max_length=4096)
