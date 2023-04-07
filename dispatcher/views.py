@@ -6,11 +6,12 @@ from datetime import datetime
 
 API_TOKEN = 'mgGp76209aN4AJUaGZA1ByVoLVBHcfpfJ1nF5D/a08TbcRlXOIIvmdd9Wkw!KdV?lwz5xSeEYsoPl0mkN76lmYYzdxLVQ!KqfWwX-NTGiXy00F?YXeRqGfP93dfOng9jhA=zG9nnHzQojZG!KEtxJGShgNRG2rhWLW4zBJIqngMMBEkDdpzoXZ8CnefF0!/13KrTBoff6H2xN5L9Ttt8?0nqmLdnPsZiPXrZ2T32w8t7KaEaAe72zMxvluEhT!8L'
 
-# login, password, name(additional)
+# login, password, token, name(additional)
 def sign_up(request):
     if request.method == 'GET':
         response = HttpResponse()
         if request.GET.get('token') == API_TOKEN:#Проверка токена
+            response.headers['token_accept'] = 1  # Токен принят
             user = Users(login = request.GET.get('login'), password = request.GET.get('password'), name = request.GET.get('name'))
             response.headers['login_accept'] = 1#Успешное создание пользователя
             response.headers['name_accept'] = 1
@@ -26,7 +27,7 @@ def sign_up(request):
                         user = Users(login = request.GET.get('login'), password = request.GET.get('password'), name = request.GET.get('login'))
             user.save()
         else:
-            response.headers['success'] = -1#Токен отвергнут
+            response.headers['token_accept'] = 0#Токен отвергнут
         return response
 # none
 def get_landmark(request):#Передаёт все данные о достопримечательностях из базы данных
@@ -46,13 +47,14 @@ def sign_in(request):
         user = Users(login=request.GET.get('login'), password=request.GET.get('password'))
         for i in Users.objects.all():
                 if i.login == user.login:
+                    response.headers['login_accept'] = 1
                     if i.password == user.password:
-                        response.headers['success'] = 1#Успешная авторизация
+                        response.headers['password_accept'] = 1#Успешная авторизация
                         return response
                     else:
-                        response.headers['success'] = -1#Неверный пароль
+                        response.headers['password_accept'] = 0#Неверный пароль
                         return response
-        response.headers['success'] = 0#Пользователь не найден
+        response.headers['login_accept'] = 0#Пользователь не найден
         return response
 # login, password, name
 def change_name(request):
