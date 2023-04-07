@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 from dispatcher.models import Users, Landmarks, Cities, LMSuggestion
 from django.http import JsonResponse
-from datetime import datetime
 
 API_TOKEN = 'mgGp76209aN4AJUaGZA1ByVoLVBHcfpfJ1nF5D/a08TbcRlXOIIvmdd9Wkw!KdV?lwz5xSeEYsoPl0mkN76lmYYzdxLVQ!KqfWwX-NTGiXy00F?YXeRqGfP93dfOng9jhA=zG9nnHzQojZG!KEtxJGShgNRG2rhWLW4zBJIqngMMBEkDdpzoXZ8CnefF0!/13KrTBoff6H2xN5L9Ttt8?0nqmLdnPsZiPXrZ2T32w8t7KaEaAe72zMxvluEhT!8L'
 
@@ -31,14 +30,12 @@ def sign_up(request):
         return response
 # none
 def get_landmark(request):#Передаёт все данные о достопримечательностях из базы данных
-    print(datetime.now())
     data = dict(data=[dict()])
     info = []
     for i in Landmarks.objects.all():
         info.append(dict(name = i.name, description = i.description, latitude = i.latitude, longitude = i.longitude, image = i.image))
     data.update(data=info)
     response = JsonResponse(data = data)#Все достопримечательности в json формате
-    print(datetime.now())
     return response
 # login, password
 def sign_in(request):
