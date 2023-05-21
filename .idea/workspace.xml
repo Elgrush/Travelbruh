@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3fbcdac4-5ae3-4e89-9522-f47089eb9116" name="Changes" comment="Debug shut down">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Travelbruh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Travelbruh.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visit/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Visit/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0002_alter_cities_description_alter_landmarks_description.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0003_landmarks_latitude_landmarks_longitude.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0004_landmarks_image_alter_landmarks_latitude_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0005_lmsuggestion_users_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="title/main" />
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="title/main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2K3SRCsX5RaQ0ewghu0h2rzWwLo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Никита/Desktop/BackBack/Travelbruh&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Никита\Desktop\Travelbruh\dispatcher" />
+      <recent name="C:\Users\Никита\Desktop\Travelbruh" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Никита\Desktop\Travelbruh\dispatcher" />
+      <recent name="C:\Users\Никита\Desktop\Travelbruh" />
+      <recent name="C:\Users\Никита\Desktop\Travelbruh\Visit" />
+      <recent name="C:\Users\Никита\Desktop\Travelbruh\polls\migrations" />
+      <recent name="C:\Users\Никита\Desktop\Travelbruh\travelserver" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="editdb (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Travelbruh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dispatcher" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dispatcher/editdb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="editdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Travelbruh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Никита\Desktop\Travelbruh\dispatcher\editdb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Travelbruh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Никита\Desktop\Travelbruh\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manualinteractionwithdatabase" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Travelbruh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/polls" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Никита\Desktop\Travelbruh\travelserver\manualinteractionwithdatabase.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.editdb" />
+      <item itemvalue="Python.editdb (1)" />
+      <item itemvalue="Python.manualinteractionwithdatabase" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.editdb (1)" />
+        <item itemvalue="Python.editdb" />
+        <item itemvalue="Python.manualinteractionwithdatabase" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3fbcdac4-5ae3-4e89-9522-f47089eb9116" name="Changes" comment="" />
+      <created>1673201762792</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673201762792</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Landmarks request feature has been added.">
+      <created>1677680141923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677680141923</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add user function updated. API_TOKEN created">
+      <created>1677922490200</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677922490200</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Commented version">
+      <created>1678394107054</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678394107054</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Name and LM request model added">
+      <created>1680693487146</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680693487146</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Change name and add landmark requests added">
+      <created>1680900108468</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680900108468</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Change name and add landmark requests added">
+      <created>1680900997522</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680900997522</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Little adjustments">
+      <created>1680901277979</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680901277979</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Accepts systematised">
+      <created>1680902216936</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680902216936</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Timedate fixed">
+      <created>1680903165839</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680903165839</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Debug shut down">
+      <created>1680903391447</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680903391447</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Landmarks request feature has been added." />
+    <MESSAGE value="Add user function updated. API_TOKEN created" />
+    <MESSAGE value="Commented version" />
+    <MESSAGE value="Name and LM request model added" />
+    <MESSAGE value="Change name and add landmark requests added" />
+    <MESSAGE value="Little adjustments" />
+    <MESSAGE value="Accepts systematised" />
+    <MESSAGE value="Timedate fixed" />
+    <MESSAGE value="Debug shut down" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debug shut down" />
+  </component>
+</project>
