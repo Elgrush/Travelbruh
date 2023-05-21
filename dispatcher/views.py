@@ -13,19 +13,18 @@ def sign_up(request):
         if request.GET.get('token') == API_TOKEN:  # Проверка токена
             response.headers['token_accept'] = 1  # Токен принят
             user = Users(login=request.GET.get('login'), password=request.GET.get('password'))
-            response.headers['login_accept'] = 1  # Успешное создание пользователя
-            response.headers['name_accept'] = 1
-            for i in Users.objects.all():
-                if i.login == user.login:  # Логин уже использован
-                    response.headers['login_accept'] = 0
-                    return response
+            response.headers['login_accept'] = 0
+            response.headers['name_accept'] = 0
+            i = Users.objects.get(login=request.GET.get('login'))
+            if i is not None:
+                return response
+            response.headers['login_accept'] = 1  # Логин принят
             if request.GET.get('name') is not None:
                 user.name = request.GET.get('name')
-                for i in Users.objects.all():
-                    if i.name == user.name:  # Имя занято
-                        response.headers['name_accept'] = 0
-                        user = Users(login=request.GET.get('login'), password=request.GET.get('password'),
-                                     name=request.GET.get('login'))
+                i = Users.objects.get(name=request.GET.get('name'))
+                if i is not None:  # Имя занято
+                    response.headers['name_accept'] = 0
+                    user.name = request.GET.get('login')
             else:
                 user.name = user.login  # Создание стандартного имени
             user.save()
@@ -50,17 +49,15 @@ def get_landmark(request):  # Передаёт все данные о досто
 def sign_in(request):
     if request.method == 'GET':
         response = HttpResponse()
-        user = Users(login=request.GET.get('login'), password=request.GET.get('password'))
-        for i in Users.objects.all():
-            if i.login == user.login:
-                response.headers['login_accept'] = 1
-                if i.password == user.password:
-                    response.headers['password_accept'] = 1  # Успешная авторизация
-                    return response
-                else:
-                    response.headers['password_accept'] = 0  # Неверный пароль
-                    return response
-        response.headers['login_accept'] = 0  # Пользователь не найден
+        response.headers['login_accept'] = 0
+        response.headers['password_accept'] = 0
+        i = Users.objects.get(login=request.GET.get('login'))
+        if i is None:
+            return response
+        response.headers['login_accept'] = 1  # Логин принят
+        if i.password != request.GET.get('password'):
+            return response
+        response.headers['password_accept'] = 1  # Пароль принят
         return response
 
 
@@ -70,42 +67,44 @@ def change_name(request):
         response = HttpResponse()
         response.headers['login_accept'] = 0
         response.headers['password_accept'] = 0
-        user = Users(login=request.GET.get('login'), password=request.GET.get('password'), name=request.GET.get('name'))
-        for i in Users.objects.all():
-            if i.login == user.login:
-                response.headers['login_accept'] = 1
-                if i.password == user.password:
-                    response.headers['password_accept'] = 1  # Пароль принят
-                    response.headers['name_accept'] = 1
-                    for q in Users.objects.all():
-                        if q.name == user.name:
-                            response.headers['name_accept'] = 0  # Имя занято
-                            return response
-                    response.headers['name_accept'] = 1  # Имя принято
-                    i.name = user.name
-                    i.save()
+        i = Users.objects.get(login=request.GET.get('login'))
+        if i is None:
+            return response
+        response.headers['login_accept'] = 1  # Логин принят
+        if i.password != request.GET.get('password'):
+            return response
+        response.headers['password_accept'] = 1  # Пароль принят
+        if Users.objects.get(name=request.GET.get('name')) is not None:
+            response.headers['name_accept'] = 0  # Имя занято
+            return response
+        response.headers['name_accept'] = 1  # Имя принято
+        i.name = request.GET.get('name')
+        i.save()
         return response
 
 
-# login, password, city id(additional)
+# login, password, name, city id(additional), message(additional)
 def suggest_landmark(request):
     if request.method == 'GET':
         response = HttpResponse()
         response.headers['login_accept'] = 0
         response.headers['password_accept'] = 0
-        user = Users(login=request.GET.get('login'), password=request.GET.get('password'), name=request.GET.get('name'))
-        for i in Users.objects.all():
-            if i.login == user.login:
-                user_id = i.id
-                response.headers['login_accept'] = 1
-                if i.password == user.password:
-                    response.headers['password_accept'] = 1  # Пароль принят
-                    suggestion = LMSuggestion(user_id=user_id, city_id=request.GET.get('city_id') if (
-                            request.GET.get('city_id') is not None) else -1, message=request.GET.get('message'))
-                    suggestion.save()
+        i = Users.objects.get(login=request.GET.get('login'))
+        if i is None:
+            return response
+        response.headers['login_accept'] = 1  # Логин принят
+        if i.password != request.GET.get('password'):
+            return response
+        response.headers['password_accept'] = 1  # Пароль принят
+        suggestion = LMSuggestion(user_id=i.id,
+                                  city_id=request.GET.get('city_id'),
+                                  name=request.GET.get('name'),
+                                  message=request.GET.get('message'))
+        suggestion.save()
         return response
 
 
+# login, password, landmark_id, token
 def visit(request):
     if request.method == 'GET':
         response = HttpResponse()
@@ -118,21 +117,23 @@ def visit(request):
         response.headers['token_accept'] = 1
         login = request.GET.get('login')
         password = request.GET.get('password')
-        if request.GET.get('landmark') is None:  # проверка наличия id
+        if request.GET.get('landmark') is None:  # Проверка наличия id
             return response
-        landmark = int(request.GET.get('landmark'))  # id достопримечательности
+        landmark = int(request.GET.get('landmark'))  # Id достопримечательности
         i = Landmarks.objects.get(id=landmark)
-        if i is None:  # проверка существования достопримечательности
+        if i is None:  # Проверка существования достопримечательности
             return response
-        response.headers['landmark_accept'] = 1  # достопримечательность принята
-        for i in Users.objects.all():
-            if i.login == login:
-                response.headers['login_accept'] = 1  # Логин принят
-                if i.password == password:
-                    response.headers['password_accept'] = 1  # Пароль принят
-                    if i.visits is None:
-                        i.visits = []
-                    if landmark not in i.visits:  # Проверка посещал ли пользователь место раньше
-                        i.visits.append(landmark)
-                        i.save()
+        response.headers['landmark_accept'] = 1  # Достопримечательность принята
+        i = Users.objects.get(login=request.GET.get('login'))
+        if i is None:
+            return response
+        response.headers['login_accept'] = 1  # Логин принят
+        if i.password != request.GET.get('password'):
+            return response
+        response.headers['password_accept'] = 1  # Пароль принят
+        if i.visits is None:
+            i.visits = []
+        if landmark not in i.visits:  # Проверка посещал ли пользователь место раньше
+            i.visits.append(landmark)
+            i.save()
         return response

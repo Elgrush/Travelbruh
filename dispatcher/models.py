@@ -30,5 +30,6 @@ class Cities(models.Model):
 class LMSuggestion(models.Model):
     id = models.BigAutoField(primary_key=True)
     user_id = models.IntegerField()
-    city_id = models.IntegerField()
-    message = models.CharField(max_length=4096)
+    city_id = models.IntegerField(default=None, blank=True, null=True)
+    name = models.CharField(max_length=30)
+    message = models.CharField(max_length=4096, default=None, blank=True, null=True)

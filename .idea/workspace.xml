@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fbcdac4-5ae3-4e89-9522-f47089eb9116" name="Changes" comment="Debug shut down">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Travelbruh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Travelbruh.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+    <list default="true" id="3fbcdac4-5ae3-4e89-9522-f47089eb9116" name="Changes" comment="Some adjustments">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Visit/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Visit/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0002_alter_cities_description_alter_landmarks_description.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0003_landmarks_latitude_landmarks_longitude.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0004_landmarks_image_alter_landmarks_latitude_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/migrations/0005_lmsuggestion_users_name.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +74,28 @@
       <recent name="C:\Users\Никита\Desktop\Travelbruh\travelserver" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.admin">
+    <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Travelbruh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/admin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="editdb (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Travelbruh" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,12 +182,14 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.admin" />
       <item itemvalue="Python.editdb" />
       <item itemvalue="Python.editdb (1)" />
       <item itemvalue="Python.manualinteractionwithdatabase" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.admin" />
         <item itemvalue="Python.editdb (1)" />
         <item itemvalue="Python.editdb" />
         <item itemvalue="Python.manualinteractionwithdatabase" />
@@ -258,7 +275,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680903391447</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Brand-new version with visit control system">
+      <created>1684659229792</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684659229792</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Some adjustments">
+      <created>1684659301445</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684659301445</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,6 +313,8 @@
     <MESSAGE value="Accepts systematised" />
     <MESSAGE value="Timedate fixed" />
     <MESSAGE value="Debug shut down" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debug shut down" />
+    <MESSAGE value="Brand-new version with visit control system" />
+    <MESSAGE value="Some adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some adjustments" />
   </component>
 </project>
