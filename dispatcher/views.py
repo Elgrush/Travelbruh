@@ -15,16 +15,19 @@ def sign_up(request):
             user = Users(login=request.GET.get('login'), password=request.GET.get('password'))
             response.headers['login_accept'] = 0
             response.headers['name_accept'] = 0
-            i = Users.objects.get(login=request.GET.get('login'))
-            if i is not None:
+            try:
+                Users.objects.get(login=request.GET.get('login'))
                 return response
-            response.headers['login_accept'] = 1  # Логин принят
+            except Users.DoesNotExist:
+                response.headers['login_accept'] = 1  # Логин принят
             if request.GET.get('name') is not None:
                 user.name = request.GET.get('name')
-                i = Users.objects.get(name=request.GET.get('name'))
-                if i is not None:  # Имя занято
+                try:
+                    Users.objects.get(name=request.GET.get('name'))
                     response.headers['name_accept'] = 0
                     user.name = request.GET.get('login')
+                except Users.DoesNotExist:
+                    pass
             else:
                 user.name = user.login  # Создание стандартного имени
             user.save()
@@ -51,8 +54,9 @@ def sign_in(request):
         response = HttpResponse()
         response.headers['login_accept'] = 0
         response.headers['password_accept'] = 0
-        i = Users.objects.get(login=request.GET.get('login'))
-        if i is None:
+        try:
+            i = Users.objects.get(login=request.GET.get('login'))
+        except Users.DoesNotExist:
             return response
         response.headers['login_accept'] = 1  # Логин принят
         if i.password != request.GET.get('password'):
@@ -67,8 +71,9 @@ def change_name(request):
         response = HttpResponse()
         response.headers['login_accept'] = 0
         response.headers['password_accept'] = 0
-        i = Users.objects.get(login=request.GET.get('login'))
-        if i is None:
+        try:
+            i = Users.objects.get(login=request.GET.get('login'))
+        except Users.DoesNotExist:
             return response
         response.headers['login_accept'] = 1  # Логин принят
         if i.password != request.GET.get('password'):
@@ -89,8 +94,9 @@ def suggest_landmark(request):
         response = HttpResponse()
         response.headers['login_accept'] = 0
         response.headers['password_accept'] = 0
-        i = Users.objects.get(login=request.GET.get('login'))
-        if i is None:
+        try:
+            i = Users.objects.get(login=request.GET.get('login'))
+        except Users.DoesNotExist:
             return response
         response.headers['login_accept'] = 1  # Логин принят
         if i.password != request.GET.get('password'):
@@ -115,17 +121,17 @@ def visit(request):
         if request.GET.get('token') != API_TOKEN:
             return response
         response.headers['token_accept'] = 1
-        login = request.GET.get('login')
-        password = request.GET.get('password')
         if request.GET.get('landmark') is None:  # Проверка наличия id
             return response
         landmark = int(request.GET.get('landmark'))  # Id достопримечательности
-        i = Landmarks.objects.get(id=landmark)
-        if i is None:  # Проверка существования достопримечательности
+        try:
+            Landmarks.objects.get(id=landmark)
+        except Landmarks.DoesNotExist:  # Проверка существования достопримечательности
             return response
         response.headers['landmark_accept'] = 1  # Достопримечательность принята
-        i = Users.objects.get(login=request.GET.get('login'))
-        if i is None:
+        try:
+            i = Users.objects.get(login=request.GET.get('login'))
+        except Users.DoesNotExist:
             return response
         response.headers['login_accept'] = 1  # Логин принят
         if i.password != request.GET.get('password'):
