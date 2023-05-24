@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3fbcdac4-5ae3-4e89-9522-f47089eb9116" name="Changes" comment="Final version for Albatsha">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,7 @@
       <recent name="C:\Users\Никита\Desktop\Travelbruh\travelserver" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.admin">
+  <component name="RunManager">
     <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Travelbruh" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -291,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684676153425</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Final version for Albatsha">
+      <created>1684869519865</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684869519865</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
