@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3fbcdac4-5ae3-4e89-9522-f47089eb9116" name="Changes" comment="Final version for Albatsha">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
       <recent name="C:\Users\Никита\Desktop\Travelbruh\travelserver" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Travelbruh" />
       <option name="INTERPRETER_OPTIONS" value="" />

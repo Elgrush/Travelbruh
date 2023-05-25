@@ -54,6 +54,7 @@ def sign_in(request):
         response = HttpResponse()
         response.headers['login_accept'] = 0
         response.headers['password_accept'] = 0
+        response.headers['visits'] = None
         try:
             i = Users.objects.get(login=request.GET.get('login'))
         except Users.DoesNotExist:
@@ -62,6 +63,7 @@ def sign_in(request):
         if i.password != request.GET.get('password'):
             return response
         response.headers['password_accept'] = 1  # Пароль принят
+        response.headers['visits'] = i.visits
         return response
 
 
